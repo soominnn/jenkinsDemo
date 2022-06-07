@@ -3,9 +3,5 @@ pipeline {
         label "demoAgent"
     }
 
-    post {
-        always{
-            echo '202206071025'
-        }
-    }
+    echo '202206071025'
 }
