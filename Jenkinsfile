@@ -3,5 +3,26 @@ pipeline {
         label "demoAgent"
     }
 
-    echo '202206071025'
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                build 'SeleniumMaven'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+    post {
+        always{
+            echo '202206071045'
+        }
+    }
 }
